@@ -1,0 +1,158 @@
+$date
+	Tue Sep 22 11:02:21 2015
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testMultiplexer $end
+$var wire 1 ! out $end
+$var reg 1 " addr0 $end
+$var reg 1 # addr1 $end
+$var reg 1 $ in0 $end
+$var reg 1 % in1 $end
+$var reg 1 & in2 $end
+$var reg 1 ' in3 $end
+$scope module DUT $end
+$var wire 1 ( address0 $end
+$var wire 1 ) address1 $end
+$var wire 1 * in0 $end
+$var wire 1 + in1 $end
+$var wire 1 , in2 $end
+$var wire 1 - in3 $end
+$var wire 1 . naddress0 $end
+$var wire 1 / naddress1 $end
+$var wire 1 0 nin0 $end
+$var wire 1 1 nin1 $end
+$var wire 1 2 nin2 $end
+$var wire 1 3 nin3 $end
+$var wire 1 ! out $end
+$var wire 1 4 s0 $end
+$var wire 1 5 s1 $end
+$var wire 1 6 s2 $end
+$var wire 1 7 s3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+z7
+z6
+z5
+x4
+z3
+z2
+z1
+z0
+z/
+z.
+0-
+0,
+0+
+1*
+0)
+0(
+0'
+0&
+0%
+1$
+0#
+0"
+z!
+$end
+#50
+x!
+07
+06
+05
+1.
+1/
+00
+11
+12
+13
+#100
+14
+#150
+1!
+#1000
+1&
+1,
+0$
+0*
+1#
+1)
+#1050
+02
+10
+04
+0/
+16
+#2000
+0&
+0,
+1%
+1+
+0#
+0)
+1"
+1(
+#2050
+12
+01
+1/
+06
+0.
+#2100
+15
+0!
+#2150
+1!
+#3000
+1'
+1-
+0%
+0+
+1#
+1)
+#3050
+03
+11
+05
+0/
+17
+#4000
+0'
+0-
+0#
+0)
+0"
+0(
+#4050
+13
+1/
+1.
+07
+#4100
+0!
+#5000
+1#
+1)
+#5050
+0/
+#6000
+0#
+0)
+1"
+1(
+#6050
+1/
+0.
+#7000
+1#
+1)
+#7050
+0/
+#8000
