@@ -16,4 +16,4 @@ _Assumes pre-existing installation of Vivado_
   
 4. Use the request for your license
   * In the same directory where you generated your request.html and request.xml, run ```_yourfavbrowser_ request.html```
-  * If everything went as it should have gone, you can now follow the original instructions to complete the process
+  * If everything worked , you can now follow the original instructions to complete the process. 
