@@ -16,4 +16,5 @@ _Assumes pre-existing installation of Vivado_
   
 4. Use the request for your license
   * In the same directory where you generated your request.html and request.xml, run ```_yourfavbrowser_ request.html```
+  * If that still didn't work, try generating a license through the Vivado GUI 
   * If everything worked , you can now follow the original instructions to complete the process. 
