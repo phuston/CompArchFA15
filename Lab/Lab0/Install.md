@@ -3,7 +3,7 @@ _Assumes pre-existing installation of Vivado_
 
 1. (_Unsure if necessary_) Download the patch for V2015.2.1 
   * Download, unzip, cd to directory
-  * Run ```./bin/xsetup```
+  * Run ```./xsetup```
   * Follow instructions to install patch (should be straightforward)
   
 2. Install and initialize computer's trusted-storage area (where activation authorizations are stored)
