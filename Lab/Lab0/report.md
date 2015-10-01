@@ -34,7 +34,7 @@
 4. FPGA Testing
     Below are the 4 steps involved in adding two numbers on the FPGA board. In this case, we were adding 7 and 1, which resulted in an overflow.
 
-    ![waveform](/Lab/Lab0/img/Step0.jpg =250x)
+    <img src="/Lab/Lab0/img/Step0.jpg" alt="waveform" style="width: 200px;"/>
     Here we set the first input to 7 (0111)
     ![waveform](/Lab/Lab0/img/Step1.jpg =250x)
     Here we set the second input to 1 (0001)
