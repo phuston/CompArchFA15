@@ -6,6 +6,8 @@ module test_adders;
 	wire [3:0] sum;
 	wire carryout;
 	wire overflow;
+	reg second;
+
 	// behavioralFullAdder adder (sum, carryout, a, b, carryin);
 	FullAdder4bit adder (sum, carryout, overflow, a, b);
 
@@ -15,9 +17,11 @@ module test_adders;
 
 	  	$display("A    B    | Sum  Co Ov");
 	  	$display("Normal biz");
-		a=4'b0;b=4'b0; #1000 
+		a=4'b1;b=4'b0101; #1000 
 		$display("%b %b | %b %b %b", a, b, sum, carryout, overflow);
-		a=4'b0;b=4'b1; #1000 
+		a=4'b1100;b=4'b1011; #1000 
+		$display("%b %b | %b %b %b", a, b, sum, carryout, overflow);
+		a=4'b1;b=4'b1; #1000 
 		$display("%b %b | %b %b %b", a, b, sum, carryout, overflow);
 		a=4'b1010;b=4'b0101; #1000 
 		$display("%b %b | %b %b %b", a, b, sum, carryout, overflow);
