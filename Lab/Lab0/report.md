@@ -35,12 +35,16 @@
     Below are the 4 steps involved in adding two numbers on the FPGA board. In this case, we were adding 7 and 1, which resulted in an overflow.
 
     <img src="/Lab/Lab0/img/Step0.jpg" alt="waveform" width="400"/>
+    
     Here we set the first input to 7 (0111)
     <img src="/Lab/Lab0/img/Step1.jpg" alt="waveform" width="400"/>
+    
     Here we set the second input to 1 (0001)
     <img src="/Lab/Lab0/img/Step2.jpg" alt="waveform" width="400"/>
+    
     Here we view the sum, -8 (1000)
     <img src="/Lab/Lab0/img/Step3.jpg" alt="waveform" width="400"/>
+    
     Here we view the carryout (0) and overflow (1), which shows that our result is invalid.
     
 5. Summary Statistics
