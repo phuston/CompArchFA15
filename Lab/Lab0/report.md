@@ -2,8 +2,11 @@
 ##### Patrick Huston, Isaac Getto, Kai Levy
 
 1. Waveforms
+  
   ![waveform](/Lab/Lab0/img/fulladderwave.png)
   
+  The operations that result in carryout and overflow (e.g. -4 + -5) take considerably longer. That is because these operations use more gates, and each additional gate used adds to the calculation time. 
+
 2. Test Strategy
 
   To test our adder, we chose 4 test additions from 4 different categories
@@ -26,7 +29,7 @@
   
 3. Test Case Failures
   
-    We ran into zero test case failures.
+    We ran into zero test case failures because we were very deliberate in our design. To create a flawless system, we utilized our 1-bit full adders from the previous assignment (which were already verified to function correctly), and strung four of them together, ensuring that the implementation was correct by running through some test cases on the whiteboard. Next, we referenced the lecture slides to determine when an overflow occurs, and implemented this feature before going through our first full testing run. Once we worked out the verilog kinks, we found that the calculator worked as expected. 
     
 4. FPGA Testing
     Below are the 4 steps involved in adding two numbers on the FPGA board. In this case, we were adding 7 and 1, which resulted in an overflow.
@@ -36,3 +39,9 @@
     ![waveform](/Lab/Lab0/img/Step2.jpg)
     ![waveform](/Lab/Lab0/img/Step3.jpg)
     
+5. Summary Statistics
+    * Total On-Chip Power -- 0.113 W
+    * Junction Temperature -- 26.3 Deg. C
+    * Thermal Margin -- 58.7 Deg. C
+
+    ![summstats](/Lab/Lab0/img/resources.png)
