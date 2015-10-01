@@ -34,10 +34,14 @@
 4. FPGA Testing
     Below are the 4 steps involved in adding two numbers on the FPGA board. In this case, we were adding 7 and 1, which resulted in an overflow.
 
-    ![waveform](/Lab/Lab0/img/Step0.jpg)
-    ![waveform](/Lab/Lab0/img/Step1.jpg)
-    ![waveform](/Lab/Lab0/img/Step2.jpg)
-    ![waveform](/Lab/Lab0/img/Step3.jpg)
+    ![waveform](/Lab/Lab0/img/Step0.jpg =250x)
+    Here we set the first input to 7 (0111)
+    ![waveform](/Lab/Lab0/img/Step1.jpg =250x)
+    Here we set the second input to 1 (0001)
+    ![waveform](/Lab/Lab0/img/Step2.jpg =250x)
+    Here we view the sum, -8 (1000)
+    ![waveform](/Lab/Lab0/img/Step3.jpg =250x)
+    Here we view the carryout (0) and overflow (1), which shows that our result is invalid.
     
 5. Summary Statistics
     * Total On-Chip Power -- 0.113 W
