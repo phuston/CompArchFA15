@@ -1,0 +1,16 @@
+Following is the provided verilog definition for a decoder:
+
+module decoder1to32
+(
+output[31:0]    out,
+input           enable,
+input[4:0]      address
+);
+    assign out = enable<<address; 
+endmodule
+
+This works because it takes the enable input and left shifts it by the 'address'
+using the '<<' operator. This effectively moves the enable over address bits, 
+setting the output to have the 1 bit in the correct 32 bit location. If enable
+is 0, the left-shifted version is still 0, which preserves the functionality 
+of the 'enable' input. 
