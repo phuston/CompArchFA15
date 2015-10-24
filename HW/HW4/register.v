@@ -29,7 +29,7 @@ input            clk
 		end
 	end
 
-module register32
+module register32zero
 (
 output reg[31:0] q,
 input[31:0]      d,

@@ -5,7 +5,10 @@ input[31:0]      d,
 input            wrenable,
 input            clk
 );
-
-	q = 32'b0
+	always @(posedge clk) begin
+		if(wrenable) begin
+			q = 32'b0;
+		end
+	end
 
 endmodule
