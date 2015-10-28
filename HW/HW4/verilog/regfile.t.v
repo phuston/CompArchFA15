@@ -183,7 +183,7 @@ output reg    Clk
     end
 
 
-  // Test Case 4
+  // Test Case 4 -- Decoder is broken - all registers are written to
 
   // Set all register values to 0 
   for (index = 1; index < 32; index = index + 1) begin
