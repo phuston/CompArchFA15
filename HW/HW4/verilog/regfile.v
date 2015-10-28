@@ -33,7 +33,7 @@ input		Clk		// Clock (Positive Edge Triggered)
 	endgenerate
 
   	mux32to1by32 mux1(ReadData1, ReadRegister1, regOutputs[0], regOutputs[1], regOutputs[2], regOutputs[3], regOutputs[4], regOutputs[5], regOutputs[6], regOutputs[7], regOutputs[8], regOutputs[9], regOutputs[10], regOutputs[11], regOutputs[12], regOutputs[13], regOutputs[14], regOutputs[15], regOutputs[16], regOutputs[17], regOutputs[18], regOutputs[19], regOutputs[20], regOutputs[21], regOutputs[22], regOutputs[23], regOutputs[24], regOutputs[25], regOutputs[26], regOutputs[27], regOutputs[28], regOutputs[29], regOutputs[30], regOutputs[31]);
-  	mux32to1by32 mux2(ReadData2, ReadRegister2, regOutputs[0], regOutputs[1], regOutputs[2], regOutputs[3], regOutputs[4], regOutputs[5], regOutputs[6], regOutputs[7], regOutputs[8], regOutputs[9], regOutputs[10], regOutputs[11], regOutputs[12], regOutputs[13], regOutputs[14], regOutputs[15], regOutputs[16], regOutputs[17], regOutputs[18], regOutputs[19], regOutputs[20], regOutputs[21], regOutputs[22], regOutputs[23], regOutputs[24], regOutputs[25], regOutputs[26], regOutputs[27], regOutputs[28], regOutputs[29], regOutputs[30], regOutputs[31]);
+  	mux32to1by32 mux2(ReadData2, ReadRegister2, regOutputs[0], regOutputs[2], regOutputs[1], regOutputs[3], regOutputs[4], regOutputs[5], regOutputs[6], regOutputs[7], regOutputs[8], regOutputs[9], regOutputs[10], regOutputs[11], regOutputs[12], regOutputs[13], regOutputs[14], regOutputs[15], regOutputs[16], regOutputs[17], regOutputs[18], regOutputs[19], regOutputs[20], regOutputs[21], regOutputs[22], regOutputs[23], regOutputs[24], regOutputs[25], regOutputs[26], regOutputs[27], regOutputs[28], regOutputs[29], regOutputs[30], regOutputs[31]);
 
 	// assign ReadData1 = 32'd42;
 	// assign ReadData2 = 32'd42;

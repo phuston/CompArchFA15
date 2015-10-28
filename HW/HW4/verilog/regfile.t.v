@@ -273,7 +273,29 @@ output reg    Clk
 
     if(index != 32'd17 && ReadData2 == 32'd15) begin
       dutpassed = 0;
-      $display("Port2 -- BROKEN");
+      $display("Write/Read mismatch -- Port BROKEN");
+    end
+  end
+
+  // Test Case 6.1 -- Write->Read value mismatch
+
+  // Write unique values to each register where val is the index of register
+  for (index = 32'd1; index < 32'd32; index = index + 32'd1) begin
+    RegWrite = 1;
+    WriteData = index;
+    WriteRegister = index;
+    #5 Clk = 1; #5 Clk = 0;
+  end
+
+  for (index = 32'd1; index < 32'd32; index = index + 32'd1) begin
+    RegWrite = 0;
+    ReadRegister1 = index;
+    ReadRegister2 = index;
+    #5 Clk = 1; #5 Clk = 0;
+
+    if (ReadData1 != index || ReadData2 != index) begin
+      dutpassed = 0;
+      $display("Write/Read mismatch -- Port BROKEN");
     end
   end
 
