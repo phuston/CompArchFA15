@@ -14,12 +14,6 @@ END:
 	j LOOP
 
 
-
-
-
-
-
-
 # Pre-populate array data in memory using .data section
 .data 
 array1:
