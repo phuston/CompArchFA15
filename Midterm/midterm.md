@@ -25,3 +25,12 @@ There are four operational modes to the bike light, depicted graphically as foll
 The bike light cycles through functionalities like this:
 
 ![FSM Diagram](/Midterm/img/fsm_flow.png "FSM Diagram")
+
+#### System Block Diagram
+
+Block diagram will go here.
+
+#### System Components
+
+##### Input Conditioner
+1.
