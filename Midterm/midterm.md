@@ -33,4 +33,8 @@ Block diagram will go here.
 #### System Components
 
 ##### Input Conditioner
-1.
+1. The input conditioner takes in the input signal from the button, and sterilizes it to debounce the signal and ensure that a button press was indeed a button press. 
+2. Inputs - noisysignal: the input signal coming from the button
+3. Outputs - conditioned: the conditioned (debounced) button signal that will serve as an input to the one-hot FSM
+4. Schematic
+5. Size
