@@ -56,6 +56,9 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 
 ##### Full Bit Adder With Carryin
 1. Specification
+
+  The one-bit adder takes in two inputs, A and carryin, and computes their sum, with the additional carryout flag. It is used in the construction of a 5 bit adder that is used in the input conditioner.
+
 2. Inputs
   
   - `carryin`: Carryin to the adder
@@ -69,6 +72,27 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 4. Schematic
 
   ![Adder Schematic](/Midterm/img/adder.png "Adder Schematic")
+
+5. Cost
+
+##### 5-Bit Adder
+1. Specification
+
+  The 5 bit adder is used in the input conditioner to wait for the noisy signal to settle on a stable value. It takes in a 5 bit number, adds 1 to it, and outputs that number. This is done by passing in a carryin of 1 to the first 1-bit adder (the least significant bit).
+
+2. Inputs
+  
+  - `carryin`: Carryin to the adder
+  - `A`: Input 1-bit number
+
+3. Outputs
+
+  - `sum`: Result of sum
+  - `carryout`: Carryout flag to be used when chaining adders together
+
+4. Schematic
+
+  ![5 Bit Adder Schematic](/Midterm/img/5bitadder.png "5 Bit Adder Schematic")
 
 5. Cost
 
@@ -125,6 +149,13 @@ The one-hot state 'decoder' is used to decode the system state (4 bit one-hot en
 
   ![Frequency Divider Schematic](/Midterm/img/frequencydivider.png "Frequency Divider Schematic")
   
+5. Cost
+
+##### T Flip-Flop
+1. Specification
+2. Inputs
+3. Outputs
+4. Schematic
 5. Cost
 
 
