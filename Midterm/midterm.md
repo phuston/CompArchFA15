@@ -18,9 +18,9 @@ There are four operational modes to the bike light, depicted graphically as foll
 2. On
   In this mode, the bike light is on. The LED shines at normal brightness.
 3. Blinking
-  In this mode, the bike light cycles between 'on' and 'off' at a frequency of __Hz
+  In this mode, the bike light cycles between high and low at a frequency of 4Hz. At this frequency, the bike light cycles through its states 4 times per second.
 4. Dim
-  In this mode, the bike light is on, but operates at a lower brightness than in normal 'on' mode.
+  In this mode, the bike light is on, but oscillates between high and low at a frequency of 128Hz. This frequency is above the human visible range, but will appear significantly dimmer than at full `ON` mode.
 
 The bike light cycles through functionalities like this:
 
@@ -38,7 +38,8 @@ Block diagram will go here.
 The input conditioner takes in the input signal from the button, and sterilizes it to debounce the signal and ensure that a button press was indeed a button press. 
 
 2. Inputs 
-
+  
+  - `clk`: system-wide 32,768Hz clock
   - `noisysignal`: the input signal coming from the button
 
 3. Outputs 
@@ -89,7 +90,7 @@ The up-counter component is used to facilitate the timing of the `BLINK` and `DI
 The one-hot state 'decoder' is used to make sense of the system state outputted by the N-stage ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
 
 2. Inputs
-
+  - `State`: 4 bit one-hot encoded system state 
   - `SignalA`: Signal outputted for bike light in state 1000 - `ON`
   - `SignalB`: Signal outputted for bike light in state 0100 - `OFF`
   - `SignalC`: Signal outputted for bike light in state 0010 - `BLINK`
@@ -98,6 +99,15 @@ The one-hot state 'decoder' is used to make sense of the system state outputted 
 3. Outputs
 
   - `LED`: The signal passed to the LED to be shone out into the world. 
+
+##### Frequency Division Unit
+1. Specification
+
+The frequency division unit outputs two square waves at frequencies which will be used to create the `BLINK` and `DIM` functionalities of the bike light. This component leverages a T flip-flop (TFF) to divide an input frequency in half. Using many of these in series serves to divide the input clock frequency to 4Hz and 128Hz, for `BLINK` and `DIM` respectively.
+
+Here is a schematic for a T flip-flop:
+
+![TFF Schematic](/Midterm/img/tff_schematic.gif "TFF Schematic")
 
 #### Blink Logic Unit
 1. Specification
