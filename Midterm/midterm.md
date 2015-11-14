@@ -66,28 +66,10 @@ The n-ring counter serves the purpose of keeping track of which mode the bike li
 4. Schematic
 5. Cost
 
-##### Up-Counter
+##### One-Hot State Multiplexer
 1. Specification
 
-The up-counter component is used to facilitate the timing of the `BLINK` and `DIM` functionalities of the bike light. Functionally, it is a binary counter that resets when it reaches the limit given the number of bits. Applying simple logic to the output bits will facilitate the process of timing the LED output.
-
-2. Inputs
-
-  - `clk`: system-wide clock used to dtermine when to increment the count
-
-3. Outputs
-  
-  - `Out[11:0]`: state of the counter - a binary number
-
-4. Schematic
-5. Cost
-  N D flip-flops + N XOR Gates + 1 AND Gate
-
-
-##### One-Hot State 'Decoder'
-1. Specification
-
-The one-hot state 'decoder' is used to make sense of the system state outputted by the N-stage ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
+The one-hot state 'decoder' is used to decode the system state (4 bit one-hot encoded) outputted by the 4 bit ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
 
 2. Inputs
   - `State`: 4 bit one-hot encoded system state 
@@ -110,6 +92,15 @@ Here is a schematic for a T flip-flop:
 ![TFF Schematic](/Midterm/img/tff_schematic.gif "TFF Schematic")
 
 As noted above, chaining several T flip-flops in a row serves to divide the frequency by some amount 2^N, where N is the number of TFFs. To output 4Hz and 128Hz, we must divide the input 32768Hz by 2^13 and 2^8, which means we must use the output after 8 and 13 flip-flops to get the correct frequency square waves needed.
+
+2. Inputs
+
+  - `clk`: system-wide 32,768Hz clock
+
+3. Outputs
+  
+  - `sig_dim`: 128Hz square wave representing `DIM` functionality
+  - `sig_blink`: 4Hz square wave representing `BLINK` functionality
 
 #### Blink Logic Unit
 1. Specification
