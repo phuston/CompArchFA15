@@ -75,6 +75,12 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 
 5. Cost
 
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| 2 inp AND     |    2+1=3      |    1   |  3   |
+| 2 inp OR      |    2+1=3      |    1   |  3    |
+| | | | Total: 6 |
+
 ##### 5-Bit Adder
 1. Specification
 
@@ -95,6 +101,11 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
   ![5 Bit Adder Schematic](/Midterm/img/5bitadder.png "5 Bit Adder Schematic")
 
 5. Cost
+
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| 1 bit adder   |   6           |    5   |  30   |
+| | | | Total: 30 |
 
 ##### One-Hot State Multiplexer
 1. Specification
@@ -151,12 +162,9 @@ The one-hot state 'decoder' is used to decode the system state (4 bit one-hot en
   
 5. Cost
 
-##### T Flip-Flop
-1. Specification
-2. Inputs
-3. Outputs
-4. Schematic
-5. Cost
-
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| PosEdge DFF   |    13         |   13   |  12   |
+| | | | Total: 169 |
 
 
