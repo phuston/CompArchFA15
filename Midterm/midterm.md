@@ -28,7 +28,7 @@ The bike light cycles through functionalities like this:
 
 #### System Block Diagram
 
-Block diagram will go here.
+![System Diagram](/Midterm/img/systemdiagram.png "System Diagram")
 
 #### System Components
 
@@ -50,25 +50,26 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 
 4. Schematic
 
-  
+  ![Input Conditioner Schematic](/Midterm/img/inputconditioner.png "Input Conditioner Schematic")
 
 5. Cost
 
-##### 4 Bit Ring Counter
+##### Full Bit Adder With Carryin
 1. Specification
-
-The n-ring counter serves the purpose of keeping track of which mode the bike light is in. It does this by holding this information in a one-hot encoded state. (ex. 1000 is ON, 0100 is OFF, 0010 is BLINK, 0001 is DIM)
-
 2. Inputs
-
-  - `clk`: clocked input used to determine when to shift the one-hot encoded state
-  - `Enable`: controls whether the one-hot encoded signal will shift on a positive clock edge
+  
+  - `carryin`: Carryin to the adder
+  - `A`: Input 1-bit number
 
 3. Outputs
-  
-  - `Q[3:0]` - One-hot encoded output representing the state of the bike light
-  
+
+  - `sum`: Result of sum
+  - `carryout`: Carryout flag to be used when chaining adders together
+
 4. Schematic
+
+  ![Adder Schematic](/Midterm/img/adder.png "Adder Schematic")
+
 5. Cost
 
 ##### One-Hot State Multiplexer
@@ -127,6 +128,4 @@ The one-hot state 'decoder' is used to decode the system state (4 bit one-hot en
 5. Cost
 
 
-##### T Flip-Flop
-s
 
