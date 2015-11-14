@@ -49,7 +49,7 @@ The input conditioner takes in the input signal from the button, and sterilizes 
 4. Schematic
 5. Cost
 
-##### N-Ring Counter
+##### 4 Bit Ring Counter
 1. Specification
 
 The n-ring counter serves the purpose of keeping track of which mode the bike light is in. It does this by holding this information in a one-hot encoded state. (ex. 1000 is ON, 0100 is OFF, 0010 is BLINK, 0001 is DIM)
@@ -108,6 +108,8 @@ The frequency division unit outputs two square waves at frequencies which will b
 Here is a schematic for a T flip-flop:
 
 ![TFF Schematic](/Midterm/img/tff_schematic.gif "TFF Schematic")
+
+As noted above, chaining several T flip-flops in a row serves to divide the frequency by some amount 2^N, where N is the number of TFFs. To output 4Hz and 128Hz, we must divide the input 32768Hz by 2^13 and 2^8, which means we must use the output after 8 and 13 flip-flops to get the correct frequency square waves needed.
 
 #### Blink Logic Unit
 1. Specification
