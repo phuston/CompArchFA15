@@ -73,25 +73,38 @@ The one-hot state 'decoder' is used to decode the system state (4 bit one-hot en
 
 2. Inputs
   - `State`: 4 bit one-hot encoded system state 
-  - `SignalA`: Signal outputted for bike light in state 1000 - `ON`
-  - `SignalB`: Signal outputted for bike light in state 0100 - `OFF`
-  - `SignalC`: Signal outputted for bike light in state 0010 - `BLINK`
-  - `SignalD`: Signal outputted for bike light in state 0001 - `DIM`
+  - `sig_off`: Signal outputted for bike light in state 1000 - `OFF`
+  - `sig_on`: Signal outputted for bike light in state 0100 - `ON`
+  - `sig_blink`: Signal outputted for bike light in state 0010 - `BLINK`
+  - `sig_dim`: Signal outputted for bike light in state 0001 - `DIM`
 
 3. Outputs
 
   - `LED`: The signal passed to the LED to be shone out into the world. 
 
+4. Schematic
+
+  ![Multiplexer Schematic](/Midterm/img/multiplexer.png "Multiplexer Schematic")
+
+5. Cost
+
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| 2 inp AND     |    2+1=3      |    4   |  12   |
+| 4 inp OR      |    4+1=5      |    1   |  5    |
+| | | | Total: 17 |
+
+
 ##### Frequency Division Unit
 1. Specification
 
-The frequency division unit outputs two square waves at frequencies which will be used to create the `BLINK` and `DIM` functionalities of the bike light. This component leverages a T flip-flop (TFF) to divide an input frequency in half. Using many of these in series serves to divide the input clock frequency to 4Hz and 128Hz, for `BLINK` and `DIM` respectively.
-
-Here is a schematic for a T flip-flop:
-
-![TFF Schematic](/Midterm/img/tff_schematic.gif "TFF Schematic")
-
-As noted above, chaining several T flip-flops in a row serves to divide the frequency by some amount 2^N, where N is the number of TFFs. To output 4Hz and 128Hz, we must divide the input 32768Hz by 2^13 and 2^8, which means we must use the output after 8 and 13 flip-flops to get the correct frequency square waves needed.
+  The frequency division unit outputs two square waves at frequencies which will be used to create the `BLINK` and `DIM` functionalities of the bike light. This component leverages a T flip-flop (TFF) to divide an input frequency in half. Using many of these in series serves to divide the input clock frequency to 4Hz and 128Hz, for `BLINK` and `DIM` respectively.
+  
+  Here is a schematic for a T flip-flop:
+  
+  ![TFF Schematic](/Midterm/img/tff_schematic.gif "TFF Schematic")
+  
+  As noted above, chaining several T flip-flops in a row serves to divide the frequency by some amount 2^N, where N is the number of TFFs. To output 4Hz and 128Hz, we must divide the input 32768Hz by 2^13 and 2^8, which means we must use the output after 8 and 13 flip-flops to get the correct frequency square waves needed.
 
 2. Inputs
 
@@ -102,19 +115,9 @@ As noted above, chaining several T flip-flops in a row serves to divide the freq
   - `sig_dim`: 128Hz square wave representing `DIM` functionality
   - `sig_blink`: 4Hz square wave representing `BLINK` functionality
 
-#### Blink Logic Unit
-1. Specification
-
-The blink logic unit (henceforth referred to as BLU) applies a simple logic to the output of the binary up-counter to output an oscillating signal at TODO Hz.
-  
 4. Schematic
+
+  ![Frequency Divider Schematic](/Midterm/img/frequencydivider.png "Frequency Divider Schematic")
+  
 5. Cost
 
-
-#### Dim Logic Unit
-1. Specification
-
-The blink logic unit (henceforth referred to as DLU) applies a simple logic to the output of the binary up-counter to output an oscillating signal at TODO Hz. This signal, when outputted to the LED, is a PWM that makes the LED appear 'dimmer'.
-  
-4. Schematic
-5. Cost
