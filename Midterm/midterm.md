@@ -28,7 +28,19 @@ The bike light cycles through functionalities like this:
 
 #### System Block Diagram
 
+Below is the high-level system schematic. The input signal from the button is conditioned (debounced using an input conditioner), which triggers the one-hot ring counter to cycle to the next mode. This mode, outputted as a 4-bit one-hot encoded state, is decoded by the one-hot multiplexor, which allows the correct signal to pass through based on the current state.
+
 ![System Diagram](/Midterm/img/systemdiagram.png "System Diagram")
+
+Total Cost
+
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| Input Cond.   |    111        |    1   |  111  |
+| Ring Counter  |    43         |    1   |  43   |
+| One-hot MUX   |    17         |    1   |  17   |
+| Freq Divider  |    169        |    1   |  169  |
+| | | | Total: 340 | 
 
 #### System Components
 
@@ -63,7 +75,7 @@ The bike light cycles through functionalities like this:
 | 5 inp AND     |    5+1=6      |    1   |  6    |
 | 5 bit ADDER   |    30         |    1   |  30   |
 | 2 inp XOR     |    3          |    1   |  3    |
-| | | | Total: 6 | 
+| | | | Total: 111 | 
 
 
 
@@ -123,7 +135,7 @@ The bike light cycles through functionalities like this:
 ##### One-Hot State Multiplexer
 1. Specification
 
-  The one-hot state 'decoder' is used to decode the system state (4 bit one-hot encoded) outputted by the 4 bit ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
+  The one-hot state multiplexer is used to decode the system state (4 bit one-hot encoded) outputted by the 4 bit ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
 
 2. Inputs
   - `State`: 4 bit one-hot encoded system state 
