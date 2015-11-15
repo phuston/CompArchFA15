@@ -52,7 +52,7 @@ The bike light cycles through functionalities like this:
 
   ![Input Conditioner Schematic](/Midterm/img/inputconditioner.png "Input Conditioner Schematic")
 
-5. Cost'
+5. Cost
 
 
 | Subcomponent  | Cost Per      | # Used | Total |
