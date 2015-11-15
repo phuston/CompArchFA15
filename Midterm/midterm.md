@@ -35,9 +35,9 @@ The bike light cycles through functionalities like this:
 ##### Input Conditioner
 1. Specification
 
-The input conditioner takes in the input signal from the button, and sterilizes it to debounce the signal and ensure that a button press was indeed a button press. Additionally, instead of passing through the raw signal, this design implements a conditioner that passes only a positive edge indicator which lasts one clock cycle. This prevents the bike light from erratically cycling through all modes whenever the button is pressed and held down for more than one clock cycle.
-
-Assume that the button noise / bouncing decays within 1 millisecond, we will need to wait at least 2^5 clock cycles before the signal is determined to be stable. This is achieved using a binary counter that counts to 32, at which point the signal is allowed to pass through. 
+  The input conditioner takes in the input signal from the button, and sterilizes it to debounce the signal and ensure that a button press was indeed a button press. Additionally, instead of passing through the raw signal, this design implements a conditioner that passes only a positive edge indicator which lasts one clock cycle. This prevents the bike light from erratically cycling through all modes whenever the button is pressed and held down for more than one clock cycle.
+  
+  Assume that the button noise / bouncing decays within 1 millisecond, we will need to wait at least 2^5 clock cycles before the signal is determined to be stable. This is achieved using a binary counter that counts to 32, at which point the signal is allowed to pass through. 
 
 2. Inputs 
   
@@ -123,7 +123,7 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 ##### One-Hot State Multiplexer
 1. Specification
 
-The one-hot state 'decoder' is used to decode the system state (4 bit one-hot encoded) outputted by the 4 bit ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
+  The one-hot state 'decoder' is used to decode the system state (4 bit one-hot encoded) outputted by the 4 bit ring counter. It takes all four bike signals as inputs, and passes the correct one through based on the system state.
 
 2. Inputs
   - `State`: 4 bit one-hot encoded system state 
