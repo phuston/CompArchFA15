@@ -52,7 +52,20 @@ Assume that the button noise / bouncing decays within 1 millisecond, we will nee
 
   ![Input Conditioner Schematic](/Midterm/img/inputconditioner.png "Input Conditioner Schematic")
 
-5. Cost
+5. Cost'
+
+
+| Subcomponent  | Cost Per      | # Used | Total |
+|:-------------:|:-------------:|:------:|:-----:|
+| PosEdge DFF   |    13         |    4   |  52   |
+| 2 inp MUX     |    7          |    7   |  14   |
+| 2 inp AND     |    3          |    2   |  6    |
+| 5 inp AND     |    5+1=6      |    1   |  6    |
+| 5 bit ADDER   |    30         |    1   |  30   |
+| 2 inp XOR     |    3          |    1   |  3    |
+| | | | Total: 6 | 
+
+
 
 ##### Full Bit Adder With Carryin
 1. Specification
